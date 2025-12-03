@@ -3,7 +3,6 @@ package fr.btsciel;
 
 import clavier.In;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class Main {
@@ -19,11 +18,16 @@ public class Main {
         if(tableau.length == 4){
             try{
                 for (String s : tableau) {
-                     valeur.add(Integer.parseInt(s));
+                    if (s.length() > 3 ) {
+                        System.out.println("Adresse non conforme");
+                        break;
+                    }else{
+                        valeur.add(Integer.parseInt(s));
+                    }
                 }
                 ClasseIpV4 classeIpV4 = new ClasseIpV4(address);
             }catch (Exception e){
-                System.out.println(e.getMessage());
+                System.out.println(e.getMessage() + " Adresse non conforme");
             }
         }else{
             System.out.println("Adresse non conforme");

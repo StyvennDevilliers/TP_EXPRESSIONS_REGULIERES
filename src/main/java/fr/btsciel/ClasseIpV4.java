@@ -4,18 +4,17 @@ public class ClasseIpV4 {
 
     public ClasseIpV4(String address) {
         StringBuilder string = new StringBuilder();
+
         if (classeA(address)) {
             string.append("Adresse Ip de Classe A ");
             if (adressesPrivees(address)) {
                 string.append("Privee ");
-            } else {
-                string.append("Publique ");;
-            }
-            if (loopback(address)) {
+            } else if (loopback(address)) {
                 string.append("Loopback ");
-            }
-            if (routeParDefaut(address)) {
+            }else if (routeParDefaut(address)) {
                 string.append("Route Par Defaut ");
+            }else{
+                string.append("Publique ");;
             }
         }
 
