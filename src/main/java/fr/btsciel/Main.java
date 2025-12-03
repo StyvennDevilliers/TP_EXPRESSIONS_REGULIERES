@@ -3,15 +3,12 @@ package fr.btsciel;
 
 import clavier.In;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public Main() {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> valeur = new ArrayList<>();
         System.out.println("Saisir une adresse Ip au format IPV4: ");
         String address = In.readString().replaceAll(" ","");
         String [] tableau = address.split("\\.");
@@ -22,10 +19,10 @@ public class Main {
                         System.out.println("Adresse non conforme");
                         break;
                     }else{
-                        valeur.add(Integer.parseInt(s));
+                        System.out.println("Adresse conforme");
                     }
+                    ClasseIpV4 classeIpV4 = new ClasseIpV4(address);
                 }
-                ClasseIpV4 classeIpV4 = new ClasseIpV4(address);
             }catch (Exception e){
                 System.out.println(e.getMessage() + " Adresse non conforme");
             }

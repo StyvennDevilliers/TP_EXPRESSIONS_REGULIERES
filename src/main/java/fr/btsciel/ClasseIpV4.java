@@ -50,13 +50,13 @@ public class ClasseIpV4 {
     private final String _128_a_191 = "(12[8-9]|1[3-8][0-9]|19[01])";
 
     public boolean classeA(String adress){
-        return  adress.matches(_0_a_127 + "." + _0_a_255 + "." + _0_a_255 + "." + _0_a_255);
+        return  adress.matches(_0_a_127 + "\\." + _0_a_255 + "\\." + _0_a_255 + "\\." + _0_a_255);
     }
     public boolean classeB(String adress){
-        return  adress.matches(_128_a_191 + "." + _0_a_255 + "." + _0_a_255 + "." + _0_a_255);
+        return  adress.matches(_128_a_191 + "\\." + _0_a_255 + "\\." + _0_a_255 + "\\." + _0_a_255);
     }
     public boolean classeC(String adress){
-        return  adress.matches(_192_a_223 + "." + _0_a_255 + "." + _0_a_255 + "." + _0_a_255);
+        return  adress.matches(_192_a_223 + "\\." + _0_a_255 + "." + _0_a_255 + "." + _0_a_255);
     }
     public boolean adressesPrivees(String adress){
         return adress.matches(adressesPrivees);

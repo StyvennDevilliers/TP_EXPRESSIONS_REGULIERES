@@ -11,7 +11,7 @@ class ClasseIpV4Test {
     void classeA() {
         assertTrue(classeIpV4.classeA("0.0.0.255") == true, "test 1");
         assertTrue(classeIpV4.classeA("10.10.56.0") == true, "test 2");
-        assertTrue(classeIpV4.classeA("127.255.255.255") == false, "test 3");
+        assertTrue(classeIpV4.classeA("127.255.255.255") == true, "test 3");
         assertTrue(classeIpV4.classeA("126.255.255.256") == false, "test 4");
         assertTrue(classeIpV4.classeA("128.0.0.0") == false, "test 5");
         assertTrue(classeIpV4.classeA("120.-5.52.63") == false, "test 6");
